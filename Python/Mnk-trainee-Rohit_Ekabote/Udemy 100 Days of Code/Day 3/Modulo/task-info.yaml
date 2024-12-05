@@ -1,0 +1,13 @@
+type: theory
+files:
+  - name: task.py
+    visible: true
+    encrypted_text: BPrPxsoPO0ddRfXxWyDgbA==
+    learner_created: false
+  - name: solution.py
+    visible: true
+    encrypted_text: ju3wZJQultB6lUsOMXeD9d9a0XF8QdEjvKl6UmpgL7gNRy7jpYi9T35NLMQMewF2UOfliq5gPUZzCx1tDohwIF/IodkcRKRBwbgLSMFmrLIsWSW/A09ePo2Rehe5jbTBYWs1it213BqzfMkLNvfI29gNg2K+rCVJISde3e4/Ij5hMGJSMaEWnOjvc2GtPlvE
+    learner_created: false
+status: Solved
+record: -1
+post_submission_on_open: true

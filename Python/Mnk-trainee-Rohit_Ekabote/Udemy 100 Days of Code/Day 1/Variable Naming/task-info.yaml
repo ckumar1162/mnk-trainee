@@ -1,0 +1,13 @@
+type: theory
+files:
+  - name: task.py
+    visible: true
+    encrypted_text: cB3KSBaSsfSN8pMosKZbR92x5s2RLabFh+erq1xxHeuPkV9SBDDc/DD9ISEnvoOYjq2ADlJLDkqt13v9zvVALg==
+    learner_created: false
+  - name: solution.py
+    visible: true
+    encrypted_text: cB3KSBaSsfSN8pMosKZbR92x5s2RLabFh+erq1xxHeuPkV9SBDDc/DD9ISEnvoOYjq2ADlJLDkqt13v9zvVALg==
+    learner_created: false
+status: Solved
+record: 5
+post_submission_on_open: true
