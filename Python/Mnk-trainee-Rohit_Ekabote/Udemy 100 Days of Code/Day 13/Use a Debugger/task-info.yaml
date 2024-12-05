@@ -1,0 +1,17 @@
+type: theory
+files:
+  - name: task.py
+    visible: true
+    encrypted_text: WNN3Mv5rGyKlbjhIwv155A9PT2zdZ8p8rYVEpfo58JV4M8KelecqVeqpXsyKj/GwVQoupMpUAkL6cmgwk3PiHI7WcANiLOlVkYj5Tm6El6tq20cpP5lT5L7azBiWMbViwY384kecfP3KE9sjAXADqJ86MRuR5jc/hrpghWtBmoJ7TZYNOFfDeVmTeoWuTt43VQec+D1bGjAI/Q+2Yf49Qry9BFRDzgUO1MXKHXSyGxiEr+ewyyO8bS9kwf5X9+cr1XvKAhqQ9pbG1qy8uEhKQH0+v8ILD8DkwxZioAirWDccVkDrFgz/gWewp8/hKzEVcyLkcLdQCIZbqjaibww75OjRU8obS3c13bVm1XjMwoTsVwJeT8U7H695HsVQaPVNxXekUHymtoP2qvLbGkoKXg==
+    learner_created: false
+  - name: solution.py
+    visible: true
+    encrypted_text: WNN3Mv5rGyKlbjhIwv155A9PT2zdZ8p8rYVEpfo58JV4M8KelecqVeqpXsyKj/GwVQoupMpUAkL6cmgwk3PiHI7WcANiLOlVkYj5Tm6El6tq20cpP5lT5L7azBiWMbViwY384kecfP3KE9sjAXADqJ86MRuR5jc/hrpghWtBmoJ7TZYNOFfDeVmTeoWuTt43VQec+D1bGjAI/Q+2Yf49Qry9BFRDzgUO1MXKHXSyGxiEr+ewyyO8bS9kwf5X9+cr1XvKAhqQ9pbG1qy8uEhKQH0+v8ILD8DkwxZioAirWDeuMwKZLyckn86XO8vzU2B5/bg6wmnn9jmovsTODzvG2HudgV3NFBknxvf6g7RHPFfEsgWnlVNWfmRxgXipVf1+059e0IUw6JEYVkVBQNg5Vg==
+    learner_created: false
+  - name: maths.py
+    visible: true
+    encrypted_text: vr8BoG1l1bC8X1dF1RcRWVZMmUuqvDs5WoAMD/qw9Xrkm//GfNgnsPeqYPWcySgf
+    learner_created: false
+status: Solved
+record: -1
+post_submission_on_open: true

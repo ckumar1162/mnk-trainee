@@ -1,0 +1,13 @@
+type: theory
+files:
+  - name: task.py
+    visible: true
+    encrypted_text: KDe3tS4tR4YVwI9acBXf5ZtYmiMaftEZ0vKVxTVmyfE1FyiJ7APCWNgb6Tz6ApEtS+W9rif1VzajguS423rcDFgKNfOjSiIPcUuG3Qsjqf5l++TFFA7UegCScB1VaCgG+KQmHkKIUL4iCDwQonxc5BRfEAI07i6IX4zWHxg1zHKooW9nhqQXegybhfEGacEyba7v7d7N0kzFF2FDp5pdnCCFZVJgwyI9NV7M+z9sxBmUncGgzJkV06GoRJN6U4mXiBd5z1nxhtqaKe0drvZ/Yw9HV9UjdVVBUmfCc/qxB4xjNACJiibAIa/FuWYi6EXaQWX7EVuaGO6VsiqCzg+xnTd9cECxhMQzrfpZk6xKv2lZmMr1e2L2k8lR5p8Szt2HoGBIk0fOHu8rZpLGo2QqdzaeypRt/OhUwLDuBABZAWY=
+    learner_created: false
+  - name: solution.py
+    visible: true
+    encrypted_text: KDe3tS4tR4YVwI9acBXf5ZtYmiMaftEZ0vKVxTVmyfEzncNXd0CD/M+ErFMAY36A7IFeDLLs5c+Fv1Ep2ajq+xm5xLh+NtTOMzbSzmxglH8Oh4/jqo4yMiPXPomZpGXoUmazrBVi622d9Ktx2NKK8kApvk9EAQbT9O7/cvbjAFI=
+    learner_created: false
+status: Solved
+record: -1
+post_submission_on_open: true
