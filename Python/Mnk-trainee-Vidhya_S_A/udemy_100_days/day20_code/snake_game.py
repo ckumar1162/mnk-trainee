@@ -1,5 +1,5 @@
 from turtle import Turtle
-X_POS = [0,-20,-40]
+START_POS = [(0,0),(-20,0),(-40,0)]
 MOVE_DISTANCE = 20
 UP =90
 DOWN = 270
@@ -15,13 +15,20 @@ class SnakeGame:
 
     def create_snake(self):
         #create a snake
-        for my_snake in range(0,3):
+        for my_snake in START_POS:
+            self.add_segments(my_snake)
 
-            my_turtle = Turtle(shape = "square")
-            my_turtle.penup()
-            my_turtle.goto(x = X_POS[my_snake] , y = 0) #position of the turtle object
-            self.segments.append(my_turtle)    
+             
 
+    def add_segments(self,my_snake):
+        my_turtle = Turtle(shape = "circle")
+        my_turtle.penup()
+        my_turtle.goto(my_snake) #position of the turtle object
+        self.segments.append(my_turtle)
+
+    def extend(self):
+        #add new segments 
+        self.add_segments(self.segments[-1].position())   
 
     def move_snake(self):
         for snake in range(len(self.segments)-1,0,-1):
