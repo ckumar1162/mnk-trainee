@@ -8,22 +8,11 @@
 
 
 def og_string(word):
-    new = set()
-    i = 0 
-    n = len(word)
-    while i < n:
-        j = i
-        while j < n and word[j] == word[i]:
-            j+=1
-
-        for letter in range(1,j-i+1):
-            new_word = word[:i] + word[letter +1:]
-            new.add(new_word) 
-        i = j      
-    print(new)        
-    return len(new)
-    
-
-print(og_string("abbcccc"))  
-print(og_string("abcd")) 
-print(og_string("aaaa"))      
+    prev = word[0]
+    count = 1
+    for i in word[1:]:
+        if i == prev:
+            count += 1
+        prev = i
+    return count
+print(og_string("abbcccc"))
