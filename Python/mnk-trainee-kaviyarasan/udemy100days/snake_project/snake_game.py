@@ -1,6 +1,7 @@
 import random
 from turtle import Turtle, Screen
 import time
+import json
 
 class SnakeGame:
     def __init__(self):
@@ -12,7 +13,7 @@ class SnakeGame:
 
         self.snake = []
         self.create_snake()
-
+        self.head = self.snake[0]
 
         self.food = Turtle("circle")
         self.food.penup()
@@ -21,8 +22,10 @@ class SnakeGame:
         self.food.speed("fastest")
         self.refresh_food()
 
-        # Scoreboard
         self.score = 0
+        with open("data.json", "r") as data:
+            self.high_score = json.load(data)
+
         self.scoreboard = Turtle()
         self.scoreboard.color("white")
         self.scoreboard.penup()
@@ -30,25 +33,30 @@ class SnakeGame:
         self.scoreboard.hideturtle()
         self.update_scoreboard()
 
-        # Control keys
         self.screen.listen()
         self.screen.onkey(self.snake_up, "Up")
         self.screen.onkey(self.snake_down, "Down")
         self.screen.onkey(self.snake_left, "Left")
         self.screen.onkey(self.snake_right, "Right")
 
-        # Game loop
         self.run_game()
 
     def create_snake(self):
         colors = ["red", "green", "blue", "yellow", "purple", "orange", "pink"]
         for position in [(0, 0), (-20, 0), (-40, 0)]:
-            color = random.choice(colors)  # Select a random color from the list
+            color = random.choice(colors)
             segment = Turtle("square")
             segment.color(color)
             segment.penup()
             segment.goto(position)
             self.snake.append(segment)
+        self.head = self.snake[0]
+
+    def snake_reset(self):
+        for seg in self.snake:
+            seg.goto(1000, 1000)
+        self.snake.clear()
+        self.create_snake()
         self.head = self.snake[0]
 
     def move(self):
@@ -80,11 +88,25 @@ class SnakeGame:
 
     def update_scoreboard(self):
         self.scoreboard.clear()
-        self.scoreboard.write(f"Score: {self.score}", align="center", font=("Courier", 24, "normal"))
+        high_scores = self.high_score["High score"]
+        self.scoreboard.write(f"Score: {self.score}\n"
+                              f"High Score1: {high_scores[0]}\n"
+                              f"High Score2: {high_scores[1]}\n"
+                              f"High Score3: {high_scores[2]}\n"
+                              f"High Score4: {high_scores[3]}\n"
+                              f"High Score5: {high_scores[4]}")
+        self.scoreboard.goto(-260, 200)
 
-    def game_over(self):
-        self.scoreboard.goto(0, 0)
-        self.scoreboard.write("GAME OVER", align="center", font=("Courier", 24, "normal"))
+    def reset(self):
+        if self.score > self.high_score["High score"][-1]:
+            self.high_score["High score"].append(self.score)
+            self.high_score["High score"] = sorted(self.high_score["High score"],reverse= True)[:5]
+
+            with open("data.json", "w") as data:
+                json.dump(self.high_score, data, indent=4)
+
+        self.score = 0
+        self.update_scoreboard()
 
     def run_game(self):
         while True:
@@ -92,21 +114,26 @@ class SnakeGame:
             time.sleep(0.1)
             self.move()
 
-            # Detect food collision
             if self.head.distance(self.food) < 15:
                 self.refresh_food()
                 self.score += 1
                 self.update_scoreboard()
-                self.snake.append(Turtle("square"))
+                new_segment = Turtle("square")
+                new_segment.color(random.choice(["red", "green", "blue", "yellow", "purple", "orange", "pink"]))
+                new_segment.penup()
+                self.snake.append(new_segment)
+                last_segment = self.snake[-2]
+                new_segment.goto(last_segment.xcor(), last_segment.ycor())
 
-            # Detect wall collision
             if abs(self.head.xcor()) > 290 or abs(self.head.ycor()) > 290:
-                self.game_over()
-                break
+                self.reset()
+                self.snake_reset()
 
-            # Detect self collision
             for segment in self.snake[1:]:
                 if self.head.distance(segment) < 10:
-                    self.game_over()
-                    break
+                    self.reset()
+                    self.snake_reset()
+
+
 SnakeGame()
+
