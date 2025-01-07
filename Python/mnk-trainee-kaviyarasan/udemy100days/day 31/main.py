@@ -1,6 +1,5 @@
 import pandas as pd
 import random
-import time
 
 current_card = {}
 to_learn = {}
@@ -19,7 +18,6 @@ def next_card():
     current_card = random.choice(to_learn)
     print(f"\nFrench: {current_card['French']}")
     print("Flipping the card")
-    time.sleep(3)
     flip_card()
     return True
 
