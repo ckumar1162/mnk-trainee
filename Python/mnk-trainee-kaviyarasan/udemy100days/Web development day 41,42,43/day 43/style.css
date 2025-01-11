@@ -1,0 +1,30 @@
+/* styles.css */
+
+img {
+  height: 200px;
+  width: 200px;
+}
+
+.color-title {
+  font-weight: normal;
+}
+
+#demon-slayer {
+  color: red;
+}
+
+#solo-leveling {
+  color: blue;
+}
+
+#death-note {
+  color: black;
+}
+
+#one-piece {
+  color: orange;
+}
+
+#naruto {
+  color: green;
+}

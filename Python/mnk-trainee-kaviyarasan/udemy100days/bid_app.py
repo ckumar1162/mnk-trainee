@@ -28,3 +28,11 @@ while highest_bids:
     elif make_bid == "yes":
         print("\n" * 20)
 
+
+
+
+
+
+
+
+
