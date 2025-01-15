@@ -3,16 +3,15 @@ from tkinter import messagebox
 import random
 import bcrypt  # Library for hashing passwords
 import pyperclip
+import json
 
 # ----------------------------- HASH PASSWORD ----------------------------- #
 def hash_password(password):
-    
-    hashed_pw = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()) #encode convert into bytes
-    return hashed_pw.decode('utf-8') # deocode will convert bytes into string
+    hashed_pw = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())  # Encode to bytes
+    return hashed_pw.decode('utf-8')  # Decode to string
 
 # ----------------------------- VERIFY PASSWORD ----------------------------- #
 def verify_password(hashed_password, input_password):
-
     return bcrypt.checkpw(input_password.encode('utf-8'), hashed_password.encode('utf-8'))
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
@@ -46,18 +45,27 @@ def save_data():
         messagebox.showinfo(title="OOPS!!!", message="Please don't leave any fields empty")
     else:
         hashed_pw = hash_password(password1)  # Hash the password
-        msg_box = messagebox.askokcancel(
-            title=website_input,
-            message=f'These are the details you entered:\nEmail: {user_input}\nPassword: {password1}\nIs it OK to save?'
-        )
-        if msg_box:
-            try:
-                with open(r"mnk-trainee\Python\Mnk-trainee-Vidhya_S_A\udemy_100_days\password-manager-start\new_data.txt", 'a') as file:
-                    file.write(f"{website_input} | {user_input} | {hashed_pw}\n")
-                web.delete(0, END)
-                pw.delete(0, END)
-            except FileNotFoundError:
-                messagebox.showerror(title="Error", message="No such file found")
+        new_data = {
+            website_input: {
+                'email': user_input,
+                'password': hashed_pw
+            }
+        }
+
+        try:
+            with open(r'mnk-trainee\Python\Mnk-trainee-Vidhya_S_A\udemy_100_days\password-manager-start\new_data.json', 'r') as file:  # Reading old data
+                data = json.load(file)
+        except FileNotFoundError:
+            data = {}  # If the file does not exist, create an empty dictionary
+
+        data.update(new_data)  # Update the old data with new data
+
+        with open(r'mnk-trainee\Python\Mnk-trainee-Vidhya_S_A\udemy_100_days\password-manager-start\new_data.json', 'w') as file:  # Write updated data back
+            json.dump(data, file, indent=4)
+
+        # Clear the fields
+        web.delete(0, END)
+        pw.delete(0, END)
 
 # ---------------------------- LOGIN FUNCTION ------------------------------- #
 def login():
@@ -70,22 +78,27 @@ def login():
         return
 
     try:
-        with open(r"mnk-trainee\Python\Mnk-trainee-Vidhya_S_A\udemy_100_days\password-manager-start\new_data.txt") as data_file:
-            content = data_file.readlines()
+        with open(r"mnk-trainee\Python\Mnk-trainee-Vidhya_S_A\udemy_100_days\password-manager-start\new_data.json", 'r') as data_file:
+            data = json.load(data_file)
     except FileNotFoundError:
         messagebox.showerror(message="No such file found")
         return
 
-    for data in content:
-        saved_website, saved_user, saved_hashed_pw = [item.strip() for item in data.strip().split('|')]
+    # Search for the matching website and username
+    if web_input in data:
+        saved_user = data[web_input]['email']
+        saved_hashed_pw = data[web_input]['password']
 
-        if web_input == saved_website and user_input == saved_user:
-            if verify_password(saved_hashed_pw, password_input):  # Verify hashed password
+        if user_input == saved_user:
+            if verify_password(saved_hashed_pw, password_input):  
                 messagebox.showinfo(message="Login Successful")
                 return
             else:
                 messagebox.showerror(message="Invalid password")
                 return
+        else:
+            messagebox.showerror(message="No matching credentials found!")
+            return
 
     messagebox.showerror(message="No matching credentials found!")
 
@@ -96,7 +109,7 @@ window.config(padx=20, pady=20)
 
 # Create canvas for logo
 canvas = Canvas(width=200, height=200)
-my_img = PhotoImage(file=r"mnk-trainee\Python\Mnk-trainee-Vidhya_S_A\udemy_100_days\password-manager-start\logo.png")
+my_img = PhotoImage(file=r"mnk-trainee\Python\Mnk-trainee-Vidhya_S_A\udemy_100_days\password-manager-start\logo.png")  
 canvas.create_image(100, 100, image=my_img)
 canvas.grid(column=1, row=0)
 
@@ -131,3 +144,4 @@ login_btn = Button(text='Login', width=34, command=login)
 login_btn.grid(column=1, row=5, columnspan=2)
 
 window.mainloop()
+

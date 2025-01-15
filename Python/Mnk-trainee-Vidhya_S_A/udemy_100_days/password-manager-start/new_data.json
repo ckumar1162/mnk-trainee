@@ -1,0 +1,14 @@
+{
+    "Amazon": {
+        "email": "vidhya@gmail.com",
+        "password": "$2b$12$FKV.83iIRCM6L5iOxVgfEu9Q5Hc1s/PgqxklAFw8e4nWZHuJ50bwu"
+    },
+    "Flipkart": {
+        "email": "vidhya@gmail.com",
+        "password": "$2b$12$LdY3ZDB7ehzfJ6b.rErs4.AXFOlt7qUTUabSYMeZIiHRnziPQ7kPC"
+    },
+    "youtube": {
+        "email": "vidhya@gmail.com",
+        "password": "$2b$12$fbT1o/Lr2idyXYkg9hD8W.bg1PtkI15257DZvER0uZAm54fQaWpi."
+    }
+}
