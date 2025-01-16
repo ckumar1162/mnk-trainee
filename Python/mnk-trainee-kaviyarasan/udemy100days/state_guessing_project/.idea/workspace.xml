@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18b23e66-329d-42a6-b096-eca654ed061e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Web development day 41,42,43/day 44/final_project.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Web development day 41,42,43/day 44/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../W3resource/basic_part_1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../W3resource/basic_part_1.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Web development day 41,42,43/day 43/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Web development day 41,42,43/day 43/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,15 +26,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.states_guessing_game.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/demon/mnk-trainee/Python/mnk-trainee-kaviyarasan/udemy100days/Timer_"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.states_guessing_game.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/demon/mnk-trainee/Python/mnk-trainee-kaviyarasan/udemy100days/Timer_&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="states_guessing_game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="state_guessing_project" />

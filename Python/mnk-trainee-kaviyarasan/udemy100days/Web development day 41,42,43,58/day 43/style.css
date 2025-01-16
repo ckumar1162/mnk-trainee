@@ -1,9 +1,6 @@
 /* styles.css */
 
-img {
-  height: 200px;
-  width: 200px;
-}
+
 
 .color-title {
   font-weight: normal;
@@ -27,4 +24,13 @@ img {
 
 #naruto {
   color: green;
+}
+
+*{
+    text-align: center
+}
+
+h1{
+    color: white;
+    background-color: red;
 }
